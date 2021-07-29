@@ -1,5 +1,15 @@
 <?php
 
+//enable cors
+$app->add(new Tuupola\Middleware\CorsMiddleware([
+    "origin" => ["*"],
+    "methods" => ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    "headers.allow" => ['', 'Authorization', 'Content-Type', 'Content-Length', 'Origin', 'Accept'],
+    "headers.expose" => [],
+    "credentials" => false,
+    "cache" => 0,
+]));
+
 /**
  * Endpoints group started by v1
  */
