@@ -141,15 +141,6 @@ class ItemController {
         $Item = $ItemsRepository->find($id);   
 
         /**
-         * Check if exists
-         */
-        if (!$Item) {
-            $logger = $this->container->get('logger');
-            $logger->warning("Item {$id} Not Found");
-            throw new \Exception("Item not Found", 404);
-        }  
-
-        /**
          * Update parameters
          */
         $Item->setName($request->getParam('name'))
@@ -183,15 +174,6 @@ class ItemController {
         $entityManager = $this->container->get('em');
         $ItemsRepository = $entityManager->getRepository('App\Models\Entity\Item');
         $Item = $ItemsRepository->find($id);   
-
-        /**
-         * Check if exists
-         */
-        if (!$Item) {
-            $logger = $this->container->get('logger');
-            $logger->warning("Item {$id} Not Found");
-            throw new \Exception("Item not Found", 404);
-        }  
 
         /**
          * Remove entity
