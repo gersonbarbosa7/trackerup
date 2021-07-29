@@ -6,22 +6,19 @@ use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
 
 /**
- * Container Resources do Slim.
- * Aqui dentro dele vamos carregar todas as dependências
- * da nossa aplicação que vão ser consumidas durante a execução
- * da nossa API
+ * Resources Slim Container
  */
 $container = new \Slim\Container();
 
 $isDevMode = true;
 
 /**
- * Diretório de Entidades e Metadata do Doctrine
+ * Entity Directory and Doctrine
  */
 $config = Setup::createAnnotationMetadataConfiguration(array(__DIR__."/src/Models/Entity"), $isDevMode);
 
 /**
- * Array de configurações da nossa conexão com o banco
+ * Settings arrat database connection
  */
 $conn = array(
     'driver' => 'pdo_sqlite',
@@ -29,13 +26,13 @@ $conn = array(
 );
 
 /**
- * Instância do Entity Manager
+ * Entity Manager instance
  */
 $entityManager = EntityManager::create($conn, $config);
 
 
 /**
- * Coloca o Entity manager dentro do container com o nome de em (Entity Manager)
+ * Entity manager inside container
  */
 $container['em'] = $entityManager;
 
