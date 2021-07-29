@@ -1,6 +1,21 @@
 {
     "require": {
-        "slim/slim": "4.*",
-        "slim/psr7": "^1.4"
-    }
+        "slim/slim": "3.*",
+        "doctrine/orm": "^2.9",
+        "doctrine/cache": "^2.1",
+        "symfony/cache": "^5.3"
+    },
+    "autoload": {
+        "psr-4": {
+          "App\\": "./src"
+        }
+      },
+      "authors": [
+        {
+            "name": "Gerson Barbosa",
+            "email": "gersonbarbosa7@gmail.com",
+            "homepage": "https://www.gersonbarbosa.com",
+            "role": "Developer"
+        }
+    ]
 }
